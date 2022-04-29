@@ -61,5 +61,22 @@ namespace Metallum.Infrastructure.Repositories
 
       return new PagedList<Band>(bands, total);
     }
+
+    public async Task<IEnumerable<Band>> GetQuebecRandomAsync(int count, CancellationToken cancellationToken = default)
+    {
+      if (count < 1 || count > 1000)
+      {
+        throw new ArgumentException("The value must be between 1 and 1000.", nameof(count));
+      }
+
+      return await DbContext.Bands
+        .FromSqlInterpolated($@"
+SELECT *
+FROM ""Bands""
+WHERE ""Status"" = {(int)BandStatus.Active} AND lower(unaccent(""Location"")) LIKE '%quebec%'
+ORDER BY random()
+LIMIT {count};")
+        .ToArrayAsync(cancellationToken);
+    }
   }
 }

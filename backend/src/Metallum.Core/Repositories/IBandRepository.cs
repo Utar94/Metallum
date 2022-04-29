@@ -15,5 +15,6 @@ namespace Metallum.Core.Repositories
       bool readOnly = false,
       CancellationToken cancellationToken = default
     );
+    Task<IEnumerable<Band>> GetQuebecRandomAsync(int count, CancellationToken cancellationToken = default);
   }
 }

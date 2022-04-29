@@ -41,5 +41,14 @@ namespace Metallum.Web.Controllers
         Count = count
       }, cancellationToken));
     }
+
+    [HttpGet("quebec/random")]
+    public async Task<ActionResult<IEnumerable<BandModel>>> GetQuebecRandomAsync(
+      int count = 10,
+      CancellationToken cancellationToken = default
+    )
+    {
+      return Ok(await mediator.Send(new GetQuebecRandom(count), cancellationToken));
+    }
   }
 }
