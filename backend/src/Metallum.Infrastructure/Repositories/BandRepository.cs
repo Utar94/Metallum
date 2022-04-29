@@ -73,7 +73,9 @@ namespace Metallum.Infrastructure.Repositories
         .FromSqlInterpolated($@"
 SELECT *
 FROM ""Bands""
-WHERE ""Status"" = {(int)BandStatus.Active} AND lower(unaccent(""Location"")) LIKE '%quebec%'
+WHERE ""Deleted"" = false
+  AND lower(unaccent(""Location"")) LIKE '%quebec%'
+  AND ""Status"" = {(int)BandStatus.Active}
 ORDER BY random()
 LIMIT {count};")
         .ToArrayAsync(cancellationToken);
