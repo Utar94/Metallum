@@ -9,7 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metallum.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metallum.ETL.WorkerService", "src\Metallum.ETL.WorkerService\Metallum.ETL.WorkerService.csproj", "{5C609FFE-9F9E-4FB7-B709-1A996133BAD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metallum.Web", "src\Metallum.Web\Metallum.Web.csproj", "{3F6804B8-9F0C-4562-AC14-50C08438E08F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Metallum.Web", "src\Metallum.Web\Metallum.Web.csproj", "{3F6804B8-9F0C-4562-AC14-50C08438E08F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44541645-4803-415D-BF85-C7B1081F34E4}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

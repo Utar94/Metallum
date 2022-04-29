@@ -1,3 +1,3 @@
-# Faktur
+# Metallum
 
-Receipt management Web application.
+Metal bands management suite.
